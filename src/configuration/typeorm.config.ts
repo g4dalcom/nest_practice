@@ -6,11 +6,11 @@ export class TypeormConfig implements TypeOrmOptionsFactory {
   createTypeOrmOptions(): TypeOrmModuleOptions {
     return {
       type: 'postgres',
-      host: 'admin',
+      host: 'localhost',
       port: 5432,
-      username: 'admin',
+      username: 'postgres',
       password: '6025',
-      database: 'nest_practice',
+      database: 'test',
       synchronize: true,
       logging: true,
       entities: [__dirname + '/../**/*.entity{.ts,.js}'],
