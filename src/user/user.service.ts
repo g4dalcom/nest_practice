@@ -36,4 +36,12 @@ export class UserService {
 
     return user;
   }
+
+  async updateUser(id: number, role: UserRole): Promise<ResponseDto> {
+    const user = await this.userRepository.findOneBy({ id: id });
+    user.role = role;
+    await this.userRepository.save(user);
+
+    return user;
+  }
 }
